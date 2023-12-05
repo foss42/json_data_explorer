@@ -449,7 +449,7 @@ class _RootNodeWidget extends StatelessWidget {
     final text = _keyName();
 
     if (!showHighlightedText) {
-      return Text(text, style: attributeKeyStyle);
+      return SelectableText(text, style: attributeKeyStyle);
     }
 
     final focusedSearchMatchIndex =
@@ -512,7 +512,7 @@ class _PropertyNodeWidget extends StatelessWidget {
     final text = valueFormatter?.call(node.value) ?? node.value.toString();
 
     if (!showHighlightedText) {
-      return Text(text, style: style);
+      return SelectableText(text, style: style);
     }
 
     final focusedSearchMatchIndex =
@@ -633,7 +633,7 @@ class _HighlightedText extends StatelessWidget {
     final lowerCaseQuery = highlightedText.toLowerCase();
 
     if (highlightedText.isEmpty || !lowerCaseText.contains(lowerCaseQuery)) {
-      return Text(text, style: style);
+      return SelectableText(text, style: style);
     }
 
     final spans = <TextSpan>[];
@@ -667,7 +667,7 @@ class _HighlightedText extends StatelessWidget {
       start = index + highlightedText.length;
     }
 
-    return Text.rich(
+    return SelectableText.rich(
       TextSpan(
         children: spans,
       ),
