@@ -352,9 +352,12 @@ class JsonAttribute extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: spacing),
-                      child: Text(
-                        ':',
-                        style: theme.rootKeyTextStyle,
+                      child: SizedBox(
+                        width: 8,
+                        child: SelectableText(
+                          ':',
+                          style: theme.rootKeyTextStyle,
+                        ),
                       ),
                     ),
                     const SizedBox(width: 4),
