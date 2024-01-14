@@ -48,7 +48,7 @@ class MyHomePage extends StatelessWidget {
           ),
           const _OpenJsonButton(
             title: 'Country List',
-            url: 'http://api.foss42.com/country/codes',
+            url: 'https://api.foss42.com/country/codes',
             padding: EdgeInsets.symmetric(vertical: 8.0),
           ),
           Text(
