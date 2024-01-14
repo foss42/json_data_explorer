@@ -50,6 +50,7 @@ class PropertyOverrides {
 ///   child:
 /// // ...
 /// ```
+/// {@end-tool}
 ///
 /// And then a [JsonDataExplorer] can be built using the store data structure:
 /// {@tool snippet}
@@ -140,6 +141,8 @@ class JsonDataExplorer extends StatelessWidget {
   /// Sets the scroll physics of the list.
   final ScrollPhysics? physics;
 
+  final double? maxRootNodeWidth;
+
   const JsonDataExplorer({
     Key? key,
     required this.nodes,
@@ -154,6 +157,7 @@ class JsonDataExplorer extends StatelessWidget {
     this.valueStyleBuilder,
     this.itemSpacing = 2,
     this.physics,
+    this.maxRootNodeWidth,
     DataExplorerTheme? theme,
   })  : theme = theme ?? DataExplorerTheme.defaultTheme,
         super(key: key);
@@ -184,6 +188,7 @@ class JsonDataExplorer extends StatelessWidget {
             valueStyleBuilder: valueStyleBuilder,
             itemSpacing: itemSpacing,
             theme: theme,
+            maxRootNodeWidth: maxRootNodeWidth,
           ),
         ),
         physics: physics,
@@ -240,6 +245,8 @@ class JsonAttribute extends StatelessWidget {
   /// Theme used to render this widget.
   final DataExplorerTheme theme;
 
+  final double? maxRootNodeWidth;
+
   const JsonAttribute({
     Key? key,
     required this.node,
@@ -252,6 +259,7 @@ class JsonAttribute extends StatelessWidget {
     this.valueFormatter,
     this.valueStyleBuilder,
     this.itemSpacing = 2,
+    this.maxRootNodeWidth,
   }) : super(key: key);
 
   @override
@@ -321,12 +329,32 @@ class JsonAttribute extends StatelessWidget {
                       ),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: spacing),
-                      child: _RootNodeWidget(
-                        node: node,
-                        rootNameFormatter: rootNameFormatter,
-                        propertyNameFormatter: propertyNameFormatter,
-                        searchTerm: searchTerm,
-                        theme: theme,
+                      child: maxRootNodeWidth != null
+                          ? Container(
+                              constraints: BoxConstraints(
+                                maxWidth: maxRootNodeWidth!,
+                              ),
+                              child: _RootNodeWidget(
+                                node: node,
+                                rootNameFormatter: rootNameFormatter,
+                                propertyNameFormatter: propertyNameFormatter,
+                                searchTerm: searchTerm,
+                                theme: theme,
+                              ),
+                            )
+                          : _RootNodeWidget(
+                              node: node,
+                              rootNameFormatter: rootNameFormatter,
+                              propertyNameFormatter: propertyNameFormatter,
+                              searchTerm: searchTerm,
+                              theme: theme,
+                            ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: spacing),
+                      child: Text(
+                        ':',
+                        style: theme.rootKeyTextStyle,
                       ),
                     ),
                     const SizedBox(width: 4),
@@ -414,9 +442,9 @@ class _RootNodeWidget extends StatelessWidget {
 
   String _keyName() {
     if (node.isRoot) {
-      return rootNameFormatter?.call(node.key) ?? '${node.key}:';
+      return rootNameFormatter?.call(node.key) ?? node.key;
     }
-    return propertyNameFormatter?.call(node.key) ?? '${node.key}:';
+    return propertyNameFormatter?.call(node.key) ?? node.key;
   }
 
   /// Gets the index of the focused search match.
