@@ -206,6 +206,7 @@ class _DataExplorerPageState extends State<DataExplorerPage> {
                     nodes: state.displayNodes,
                     itemScrollController: itemScrollController,
                     itemSpacing: 4,
+                    maxRootNodeWidth: 200,
 
                     /// Builds a widget after each root node displaying the
                     /// number of children nodes that it has. Displays `{x}`
