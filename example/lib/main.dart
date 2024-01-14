@@ -46,6 +46,11 @@ class MyHomePage extends StatelessWidget {
             url: 'http://api.open-notify.org/iss-now.json',
             padding: EdgeInsets.symmetric(vertical: 8.0),
           ),
+          const _OpenJsonButton(
+            title: 'Country List',
+            url: 'http://api.foss42.com/country/codes',
+            padding: EdgeInsets.symmetric(vertical: 8.0),
+          ),
           Text(
             'Medium JSON',
             style: Theme.of(context).textTheme.headline6,
