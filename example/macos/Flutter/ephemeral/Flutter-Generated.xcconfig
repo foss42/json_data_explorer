@@ -1,13 +1,13 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/Users/ashitaprasad/Documents/flutter
-FLUTTER_APPLICATION_PATH=/Users/ashitaprasad/Documents/GitHub/json_data_explorer/example
+FLUTTER_ROOT=/Users/ankitm/Documents/flutter
+FLUTTER_APPLICATION_PATH=/Users/ankitm/Documents/GitHub/json_data_explorer/example
 COCOAPODS_PARALLEL_CODE_SIGN=true
-FLUTTER_TARGET=/Users/ashitaprasad/Documents/GitHub/json_data_explorer/example/lib/main.dart
+FLUTTER_TARGET=/Users/ankitm/Documents/GitHub/json_data_explorer/example/lib/main.dart
 FLUTTER_BUILD_DIR=build
 FLUTTER_BUILD_NAME=1.0.0
 FLUTTER_BUILD_NUMBER=1
-DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC8zZjNlNTYwMjM2NTM5YjdlMjcwMmY1YWM3OTBiMmE0NjkxYjMyZDQ5Lw==
+DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC8yZTRiYTljNmZiNDk5Y2NkNGU4MTQyMDU0Mzc4M2NjNzI2N2FlNDA2Lw==
 DART_OBFUSCATION=false
 TRACK_WIDGET_CREATION=true
 TREE_SHAKE_ICONS=false
-PACKAGE_CONFIG=/Users/ashitaprasad/Documents/GitHub/json_data_explorer/example/.dart_tool/package_config.json
+PACKAGE_CONFIG=/Users/ankitm/Documents/GitHub/json_data_explorer/example/.dart_tool/package_config.json
